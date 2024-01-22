@@ -6,6 +6,7 @@ const options = {
       'X-RapidAPI-Key': '4e7549b155msh04d1671d1fda57cp10f854jsn80a0dccdb5c1',
       'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
     }
+    
   };
   
   fetch('https://shazam.p.rapidapi.com/charts/track', options)
@@ -19,13 +20,14 @@ const options = {
         baseQuery: fetchBaseQuery({
             baseUrl: 'https://shazam.p.rapidapi.com/',
             prepareHeaders:(headers)=>{
+                
                 headers.set('X-RapidAPI-Key', '4e7549b155msh04d1671d1fda57cp10f854jsn80a0dccdb5c1');
 
                 return headers;
             }
         }),
         endpoints: (builder)=>({
-            getTopCharts: builder.query({query : ()=>'/charts/track'})
+            getTopCharts: builder.query({query : ()=>'/charts/track?listId=ip-city-chart-1275339'})
         })
     });
 
